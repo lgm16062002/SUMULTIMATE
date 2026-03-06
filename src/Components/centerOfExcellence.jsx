@@ -21,6 +21,7 @@ import {
   FaNotesMedical,
   FaUserMd,
 } from "react-icons/fa";
+import { Card, CardContent } from "./ui/card";
 
 const centers = [
   { title: "ANESTHESIOLOGY & PAIN MANAGEMENT", icon: <FaProcedures /> },
@@ -33,60 +34,6 @@ const centers = [
   { title: "DERMATOLOGY & VENEROLOGY", icon: <FaHandHoldingMedical /> },
   { title: "DENTISTRY & MAXILLOFACIAL SURGERY", icon: <FaTooth /> },
   { title: "DIABETOLOGY", icon: <FaSyringe /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
-  { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
   { title: "EMERGENCY MEDICINE", icon: <FaUserMd /> },
 ];
 
@@ -107,7 +54,7 @@ export default function CenterOfExcellence() {
         <h2 className="text-4xl text-green-400 mb-12">Centers of Excellence</h2>
 
         <Carousel
-          opts={{ align: "start", loop:true, duration: 40 }}
+          opts={{ align: "start", loop: true }}
           plugins={[
             Autoplay({
               delay: 2000,
@@ -115,25 +62,48 @@ export default function CenterOfExcellence() {
           ]}
         >
           <CarouselContent>
-            {slides.map((slide, index) => (
-              <CarouselItem key={index}>
-                {/* 2 ROW GRID */}
-                <div className="grid grid-cols-6 gap-12">
-                  {slide.map((item, i) => (
-                    <div key={i} className="text-center">
-                      {/* CARD */}
-                      <div className="w-[160px] h-[150px] bg-[#e6e6e6] rounded-2xl flex items-center justify-center mx-auto">
-                        <div className="text-4xl text-teal-500">
-                          {item.icon}
-                        </div>
-                      </div>
+            {centers.map((card, index) => (
+              <CarouselItem
+                key={index}
+                className="flex flex-col items-center lg:basis-1/6 gap-8"
+              >
+                <div>
+                  <Card className="w-[170px] h-[150px] bg-[#e9e9e9] rounded-3xl border-none shadow-none flex items-center justify-center">
+                    <CardContent className="flex items-center justify-center p-0">
+                      {/* Icon */}
+                      <FaMicroscope
+                        className="text-[65px]"
+                        style={{
+                          background: "linear-gradient(180deg,#0b3c66,#22c55e)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      />
+                    </CardContent>
+                  </Card>
+                  <p className="text-white text-sm mt-1 text-center max-w-[170px] leading-snug">
+                    CLINICAL LABORATORY
+                  </p>
+                </div>
+                <div>
+                  <Card className="w-[170px] h-[150px] bg-[#e9e9e9] rounded-3xl border-none shadow-none flex items-center justify-center">
+                    <CardContent className="flex items-center justify-center p-0">
+                      {/* Icon */}
+                      <FaMicroscope
+                        className="text-[65px]"
+                        style={{
+                          background: "linear-gradient(180deg,#0b3c66,#22c55e)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      />
+                    </CardContent>
+                  </Card>
 
-                      {/* TITLE */}
-                      <p className="text-white text-sm mt-4 leading-snug max-w-[160px] mx-auto">
-                        {item.title}
-                      </p>
-                    </div>
-                  ))}
+                  {/* Title */}
+                  <p className="text-white text-sm mt-1 text-center max-w-[170px] leading-snug">
+                    CLINICAL LABORATORY
+                  </p>
                 </div>
               </CarouselItem>
             ))}
