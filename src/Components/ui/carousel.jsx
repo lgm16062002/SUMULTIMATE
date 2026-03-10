@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/Components/ui/button"
 
 const CarouselContext = React.createContext(null)
 

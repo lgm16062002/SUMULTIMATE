@@ -5,8 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+} from "@/Components/ui/carousel";
+import { Card, CardContent } from "@/Components/ui/card";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const patientService = [
