@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Blog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* SECTION */
+
+        .blog-section {
+            background-image: url("images/pattern-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+        }
+
+        /* TITLE */
+
+        .blog-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #163b5c;
+            margin-bottom: 60px;
+        }
+
+        /* FLEX CONTAINER */
+
+        .blog-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* CARD */
+
+        .blog-card {
+            width: 350px;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* IMAGE */
+
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* CONTENT */
+
+        .blog-content {
+            padding: 22px;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .blog-meta {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* MOBILE */
+
+        @media (max-width:768px) {
+
+            .blog-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="blog-section">
+
+        <h2 class="blog-title">LATEST BLOG</h2>
+
+        <div class="blog-container">
+
+            <div class="blog-card">
+                <img src="images/blog1.jpg">
+                <div class="blog-content">
+                    <h3>The Flourishing Spirit of Giving at SMC</h3>
+                    <p class="blog-meta">Press Release • Feb 27, 2026</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="images/blog2.jpg">
+                <div class="blog-content">
+                    <h3>Why Do Never-Smokers Develop Lung Cancer? Investigating the Underlying Causes</h3>
+                    <p class="blog-meta">Research • Feb 24, 2026</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="images/blog3.jpg">
+                <div class="blog-content">
+                    <h3>Concerned About Lymphedema After Surgery for Gynecologic or Breast Cancer?</h3>
+                    <p class="blog-meta">Press Release • Feb 13, 2026</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
