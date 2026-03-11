@@ -85,17 +85,20 @@ export default function PatientService() {
           align: "start",
           loop: true,
         }}
-        className="w-[90%] mx-auto relative"
+        className="w-[92%] sm:w-[90%] mx-auto relative"
       >
         <CarouselContent className="">
           {patientService?.map((item, idx) => (
-            <CarouselItem key={idx} className="basis-1/1 md:basis-1/2 lg:basis-1/4">
+            <CarouselItem
+              key={idx}
+              className="basis-full sm:basis-1/2 lg:basis-1/4"
+            >
               <div
-                className=""
+                className="flex justify-center"
                 data-aos="zoom-in"
                 data-aos-delay={150 + idx * 50}
               >
-                <Card className="w-[290px] overflow-hidden rounded-3xl shadow-lg p-0">
+                <Card className="w-full max-w-[290px] overflow-hidden rounded-3xl shadow-lg p-0">
                   <CardContent className="relative aspect-[3/4] p-0">
                     {/* Image */}
                     <img
@@ -122,8 +125,10 @@ export default function PatientService() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute top-[110%] left-[45%] p-5 shadow-xl border-2 active:shadow-none active:transform-[translateY(5px)] duration-300  border-blue-800" />
-        <CarouselNext className="absolute top-[110%] right-[47%] p-5 shadow-xl border-2 active:shadow-none active:transform-[translateY(5px)] duration-300  border-blue-800" />
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <CarouselPrevious className="static p-5 shadow-xl border-2 active:shadow-none active:transform-[translateY(5px)] duration-300 border-blue-800" />
+          <CarouselNext className="static p-5 shadow-xl border-2 active:shadow-none active:transform-[translateY(5px)] duration-300 border-blue-800" />
+        </div>
       </Carousel>
     </section>
   );

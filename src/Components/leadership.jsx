@@ -21,6 +21,7 @@ export default function Leadership() {
   return (
     <section
       className="bg-white py-[80px] px-5 text-center font-sans"
+      id="leadership"
       data-aos="fade-up"
     >
       <h2
@@ -35,7 +36,7 @@ export default function Leadership() {
         {leaders.map((leader, index) => (
           <div
             key={index}
-            className="w-[300px]"
+            className="w-full max-w-[300px]"
             data-aos="zoom-in"
             data-aos-delay={100 + index * 100}
           >
