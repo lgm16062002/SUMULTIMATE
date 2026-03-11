@@ -63,9 +63,18 @@ const pairs = chunkArray(centers, 2);
 
 export default function CenterOfExcellence() {
   return (
-    <section className="centerOfExcellence py-20 bg-[url('/section-pattern.png')] bg-cover bg-center bg-no-repeat" id="centers">
-      <div className="w-[90%] mx-auto relative">
-        <h2 className="text-4xl text-[#39ffbc] font-normal mb-16 px-4">Centers of Excellence</h2>
+    <section
+      className="centerOfExcellence py-20 bg-[url('/section-pattern.png')] bg-cover bg-center bg-no-repeat"
+      id="centers"
+      data-aos="fade-up"
+    >
+      <div className="w-[92%] sm:w-[90%] mx-auto relative">
+        <h2
+          className="text-3xl sm:text-4xl text-[#39ffbc] font-normal mb-10 sm:mb-16 px-2 sm:px-4"
+          data-aos="fade-right"
+        >
+          Centers of Excellence
+        </h2>
 
         <Carousel
           opts={{ align: "start", loop: true }}
@@ -82,10 +91,10 @@ export default function CenterOfExcellence() {
                 key={index}
                 className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6"
               >
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-10 sm:gap-12">
                   {pair.map((item, subIndex) => (
                     <div key={subIndex} className="flex flex-col items-center group cursor-pointer">
-                      <div className="w-[155px] h-[145px] bg-[#EDEDED] rounded-[24px] flex items-center justify-center p-5 transition-all duration-300">
+                      <div className="w-[140px] h-[132px] sm:w-[155px] sm:h-[145px] bg-[#EDEDED] rounded-[24px] flex items-center justify-center p-4 sm:p-5 transition-all duration-300">
                         <img
                           src={item.img}
                           alt={item.title}
@@ -102,8 +111,8 @@ export default function CenterOfExcellence() {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
-          <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
+          <CarouselPrevious className="hidden md:inline-flex absolute left-2 lg:left-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
+          <CarouselNext className="hidden md:inline-flex absolute right-2 lg:right-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
         </Carousel>
       </div>
     </section>

@@ -19,14 +19,27 @@ export default function Leadership() {
   ];
 
   return (
-    <section className="bg-white py-[80px] px-5 text-center font-sans">
-      <h2 className="text-[28px] tracking-[1px] text-[#0f2c59] mb-[70px] uppercase font-semibold">
+    <section
+      className="bg-white py-[80px] px-5 text-center font-sans"
+      id="leadership"
+      data-aos="fade-up"
+    >
+      <h2
+        className="text-[28px] tracking-[1px] text-[#0f2c59] mb-[70px] uppercase font-semibold"
+        data-aos="fade-up"
+        data-aos-delay="50"
+      >
         FROM THE DESK OF OUR LEADERSHIP
       </h2>
 
       <div className="flex justify-center gap-8 md:gap-[60px] lg:gap-[80px] flex-wrap">
         {leaders.map((leader, index) => (
-          <div key={index} className="w-[300px]">
+          <div
+            key={index}
+            className="w-full max-w-[300px]"
+            data-aos="zoom-in"
+            data-aos-delay={100 + index * 100}
+          >
             <img
               src={leader.image}
               alt={leader.name}
