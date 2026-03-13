@@ -93,7 +93,7 @@ export default function Choose() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-h-screen flex items-center sticky top-0 z-10"
+      className="relative w-full overflow-hidden min-h-screen flex items-center -mt-16 md:-mt-20 z-20"
       id="journey"
     >
       {/* Background Image */}

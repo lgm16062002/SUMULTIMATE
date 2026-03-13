@@ -112,7 +112,7 @@ export default function WhereJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#eef6f6] flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 -mt-16 md:-mt-20 z-20"
+      className="relative w-full min-h-screen bg-[#eef6f6] flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 sticky top-0 z-10"
     >
       {/* Image on the left anchored to the bottom */}
       <img

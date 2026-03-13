@@ -6,7 +6,7 @@ export default function Header() {
 
   const navItems = [
     { label: 'STORY', href: '#journey' },
-    { label: 'DOCTORS', href: '#leadership' },
+    { label: 'DOCTORS', href: '/doctor' },
     { label: 'MEDIA COVERAGE', href: '#blog' },
     { label: 'PATIENTS SPEAK', href: '#services' },
     { label: 'PACKAGES', href: '#services' },
