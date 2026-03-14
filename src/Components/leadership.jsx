@@ -20,7 +20,7 @@ export default function Leadership() {
 
   return (
     <section
-      className="bg-white py-[80px] px-5 text-center font-sans"
+      className="relative overflow-hidden bg-white py-[80px] px-5 text-center font-sans"
       id="leadership"
       data-aos="fade-up"
     >
@@ -43,7 +43,7 @@ export default function Leadership() {
             <img
               src={leader.image}
               alt={leader.name}
-              className="w-full h-[340px] object-cover rounded-[35px] mb-[24px] shadow-[0px_20px_40px_rgba(0,0,0,0.2)]"
+              className="w-full h-[340px] object-cover rounded-[35px] mb-[24px] shadow-[0px_20px_40px_rgba(0,0,0,0.2),0_0_30px_rgba(255,255,255,0.6)] transition-all duration-500 hover:scale-105 hover:shadow-[0px_30px_60px_rgba(0,0,0,0.3),0_0_50px_rgba(255,255,255,0.9),0_0_80px_rgba(255,255,255,0.4)]"
             />
             <h4 className="text-[16px] text-[#333] m-0 font-bold tracking-wide">
               {leader.name}
@@ -53,6 +53,14 @@ export default function Leadership() {
             </p>
           </div>
         ))}
+      </div>
+
+      <div className="pointer-events-none absolute bottom-0 right-[5rem] sm:right-[5.75rem] md:right-[7rem] z-10">
+        <img
+          src="/sum-icon.png"
+          alt=""
+          className="w-[96px] sm:w-[122px] md:w-[150px] object-contain opacity-20"
+        />
       </div>
     </section>
   )

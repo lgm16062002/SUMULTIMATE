@@ -14,7 +14,7 @@ const Renderer = () => {
   return (
     <>
       <div className="w-full relative">
-        <div className="absolute top-0 left-0 w-full z-50 bg-gradient-to-b from-white/100 via-white/40 to-transparent pb-10">
+        <div className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
           <Header />
         </div>
         <Hero />
@@ -23,10 +23,10 @@ const Renderer = () => {
       <PatientService />
      
 
-      {/* Sticky WhereJourney + overlapping Choose block */}
+      {/* Sticky Choose + overlapping WhereJourney block */}
       <div className="relative">
-        <WhereJourney />
         <Choose />
+        <WhereJourney />
       </div>
        <CenterOfExcellence />
 

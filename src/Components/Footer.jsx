@@ -72,6 +72,13 @@ export default function Footer() {
                 <p>© 2026 Sum Ultimate | Best Hospitals In Bhubaneswar | </p>
                 <p>Location | Patients' Rights and Responsibilities | Privacy Policy</p>
             </div>
+            <div className="pointer-events-none absolute bottom-0 right-[5rem] sm:right-[5.75rem] md:right-[7rem] z-10">
+                <img
+                    src="/sum-icon.png"
+                    alt=""
+                    className="w-[96px] sm:w-[122px] md:w-[150px] object-contain opacity-20"
+                />
+            </div>
         </footer>
     );
 }

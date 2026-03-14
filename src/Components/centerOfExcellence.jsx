@@ -64,7 +64,7 @@ const pairs = chunkArray(centers, 2);
 export default function CenterOfExcellence() {
   return (
     <section
-      className="centerOfExcellence py-20 bg-[url('/section-pattern.png')] bg-cover bg-center bg-no-repeat"
+      className="centerOfExcellence relative overflow-hidden py-20 bg-[url('/section-pattern.png')] bg-cover bg-center bg-no-repeat"
       id="centers"
       data-aos="fade-up"
     >
@@ -94,7 +94,7 @@ export default function CenterOfExcellence() {
                 <div className="flex flex-col gap-10 sm:gap-12">
                   {pair.map((item, subIndex) => (
                     <div key={subIndex} className="flex flex-col items-center group cursor-pointer">
-                      <div className="w-[140px] h-[132px] sm:w-[155px] sm:h-[145px] bg-[#EDEDED] rounded-[24px] flex items-center justify-center p-4 sm:p-5 transition-all duration-300">
+                      <div className="w-[140px] h-[132px] sm:w-[155px] sm:h-[145px] bg-[#EDEDED] rounded-[24px] flex items-center justify-center p-4 sm:p-5 transition-all duration-300 hover:shadow-[0_0_30px_rgba(57,255,188,0.5),0_0_60px_rgba(10,92,109,0.3)]">
                         <img
                           src={item.img}
                           alt={item.title}
@@ -114,6 +114,14 @@ export default function CenterOfExcellence() {
           <CarouselPrevious className="hidden md:inline-flex absolute left-2 lg:left-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
           <CarouselNext className="hidden md:inline-flex absolute right-2 lg:right-[-50px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-[#39ffbc] text-white hover:text-[#07234e] border-none transition-colors" />
         </Carousel>
+      </div>
+
+      <div className="pointer-events-none absolute bottom-0 left-[6rem] sm:left-[6.75rem] md:left-[8rem] z-10">
+        <img
+          src="/sum-icon.png"
+          alt=""
+          className="w-[96px] sm:w-[122px] md:w-[150px] object-contain opacity-20"
+        />
       </div>
     </section>
   );

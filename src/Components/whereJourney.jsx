@@ -112,7 +112,7 @@ export default function WhereJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#eef6f6] flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 sticky top-0 z-10"
+      className="relative w-full min-h-screen bg-[#eef6f6] flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 z-20"
     >
       {/* Image on the left anchored to the bottom */}
       <img
@@ -153,6 +153,14 @@ export default function WhereJourney() {
         >
           Know More
         </button>
+      </div>
+
+      <div className="pointer-events-none absolute bottom-0 right-[5rem] sm:right-[5.75rem] md:right-[7rem] z-30">
+        <img
+          src="/sum-icon.png"
+          alt=""
+          className="w-[96px] sm:w-[122px] md:w-[150px] object-contain opacity-30"
+        />
       </div>
 
     </section>

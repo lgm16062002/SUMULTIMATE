@@ -63,7 +63,7 @@ const patientService = [
 export default function PatientService() {
   return (
     <section
-      className="patientService py-14"
+      className="patientService relative overflow-hidden py-14"
       id="services"
       data-aos="fade-up"
     >
@@ -130,6 +130,14 @@ export default function PatientService() {
           <CarouselNext className="static p-5 shadow-xl border-2 active:shadow-none active:transform-[translateY(5px)] duration-300 border-blue-800" />
         </div>
       </Carousel>
+
+      <div className="pointer-events-none absolute bottom-3 right-4 sm:bottom-4 sm:right-6 md:bottom-5 md:right-8 z-30">
+        <img
+          src="/sum-icon.png"
+          alt=""
+          className="w-[56px] sm:w-[72px] md:w-[88px] object-contain opacity-80 brightness-[0.45] contrast-125"
+        />
+      </div>
     </section>
   );
 }

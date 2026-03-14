@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <section
-      className="border-t-[8px] border-[#19656c] bg-transparent p-0 relative z-10"
+      className="border-t-[8px] border-[#19656c] bg-white p-0 relative z-10"
       data-aos="fade-down"
     >
       <div className="w-full mx-auto">
