@@ -1,108 +1,68 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function WhereJourney() {
   const sectionRef = useRef(null)
-  const imageRef = useRef(null)
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const textRef = useRef(null)
   const buttonRef = useRef(null)
+  const [bgImage, setBgImage] = useState('/journey-bg.png')
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBgImage('/journey-bg-mobile.png')
+      } else {
+        setBgImage('/journey-bg.png')
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     const ctx = gsap.context(() => {
-      // Image animation
-      gsap.fromTo(
-        imageRef.current,
-        { x: -80, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 75%',
-            end: 'top 35%',
-            toggleActions: 'play none none reverse',
-          },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 70%',
+          end: 'bottom 30%',
+          toggleActions: 'play reverse play reverse',
         }
-      )
+      })
 
-      // Title animation
-      gsap.fromTo(
+      // Title animation - comes down from above
+      tl.fromTo(
         titleRef.current,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 65%',
-            end: 'top 30%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
       )
-
-      // Subtitle animation
-      gsap.fromTo(
+      // Subtitle animation - comes down
+      .fromTo(
         subtitleRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 55%',
-            end: 'top 25%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 80, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' },
+        '-=0.5'
       )
-
-      // Paragraph animation
-      gsap.fromTo(
+      // Paragraph animation - comes down
+      .fromTo(
         textRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 45%',
-            end: 'top 20%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
+        '-=0.4'
       )
-
-      // Button animation
-      gsap.fromTo(
+      // Button animation - comes down with bounce
+      .fromTo(
         buttonRef.current,
-        { y: 40, opacity: 0, scale: 0.9 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 35%',
-            end: 'top 10%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' },
+        '-=0.3'
       )
     }, sectionRef)
 
@@ -112,44 +72,70 @@ export default function WhereJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#eef6f6] flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 z-20"
+      className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 z-20"
+      style={{ backgroundImage: `url('${bgImage}')` }}
     >
-      {/* Image on the left anchored to the bottom */}
-      <img
-        ref={imageRef}
-        src="/patient.png"
-        alt="Compassionate Care"
-        className="absolute left-0 bottom-0 h-auto w-[92%] sm:w-[80%] md:w-[50%] lg:w-[45%] object-contain z-10 max-md:static max-md:mb-8 opacity-0"
-      />
+      {/* Mobile: Heading at top - Hidden on desktop */}
+      <h2
+        ref={titleRef}
+        className="md:hidden text-white text-[28px] sm:text-[32px] font-semibold tracking-wide leading-[1.2] max-w-[600px] text-left px-4 pt-8 pb-8"
+      >
+        Where Your Journey Meets<br />Compassionate Care
+      </h2>
 
-      {/* Content wrapper taking up the right side */}
+      {/* Desktop: All content together - Hidden on mobile */}
       <div
-        className="relative z-20 w-[92%] sm:w-[90%] md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left px-2 sm:px-0 md:pl-[5%] md:pr-[5%]"
+        className="hidden md:flex relative z-20 w-[60%] flex-col items-start text-left pl-[15%] pr-[5%]"
       >
         <h2
-          ref={titleRef}
-          className="text-[#2b6b7a] text-[28px] sm:text-[32px] md:text-[40px] lg:text-[45px] font-semibold tracking-wide leading-[1.2] mb-5 sm:mb-6 max-w-[600px] opacity-0"
+          className="text-white text-[40px] lg:text-[45px] font-semibold tracking-wide leading-[1.2] mb-6 max-w-[600px]"
         >
           Where Your Journey Meets<br />Compassionate Care
         </h2>
 
         <h3
           ref={subtitleRef}
-          className="text-[#666] text-[18px] sm:text-[20px] md:text-[22px] font-medium mb-5 sm:mb-6 opacity-0"
+          className="text-white text-[20px] lg:text-[22px] font-medium mb-6"
         >
           Realizing Patient-Centered Care
         </h3>
 
         <p
           ref={textRef}
-          className="text-[#444] text-[15px] sm:text-[18px] md:text-[20px] font-light leading-[1.6] max-w-[650px] mb-8 sm:mb-12 opacity-0"
+          className="text-white text-[18px] lg:text-[20px] font-light leading-[1.6] max-w-[650px] mb-12"
         >
           We are committed to providing medical services that prioritize each patient's unique experience &ndash; ensuring personalized, respectful, and collaborative care at every step.
         </p>
 
         <button
           ref={buttonRef}
-          className="bg-transparent border-2 border-[#1e6ac2] text-[#6b6b6b] hover:bg-[#1e6ac2] hover:text-white transition-all duration-300 font-medium py-[10px] px-10 rounded-[30px] text-[15px] sm:text-[16px] tracking-wide w-full sm:w-auto opacity-0"
+          className="bg-transparent border-2 border-[#1e6ac2] text-white hover:bg-[#1e6ac2] hover:text-white transition-all duration-300 font-medium py-[10px] px-10 rounded-[30px] text-[16px] tracking-wide"
+        >
+          Know More
+        </button>
+      </div>
+
+      {/* Mobile: Other content below - Hidden on desktop */}
+      <div
+        className="md:hidden relative z-20 w-[92%] sm:w-[90%] flex flex-col items-center text-center px-2 mt-8 pb-12"
+      >
+        <h3
+          ref={subtitleRef}
+          className="text-white text-[18px] sm:text-[20px] font-medium mb-5 sm:mb-6"
+        >
+          Realizing Patient-Centered Care
+        </h3>
+
+        <p
+          ref={textRef}
+          className="text-white text-[15px] sm:text-[18px] font-light leading-[1.6] max-w-[650px] mb-8 sm:mb-12"
+        >
+          We are committed to providing medical services that prioritize each patient's unique experience &ndash; ensuring personalized, respectful, and collaborative care at every step.
+        </p>
+
+        <button
+          ref={buttonRef}
+          className="bg-transparent border-2 border-[#1e6ac2] text-white hover:bg-[#1e6ac2] hover:text-white transition-all duration-300 font-medium py-[10px] px-10 rounded-[30px] text-[15px] sm:text-[16px] tracking-wide w-full sm:w-auto"
         >
           Know More
         </button>

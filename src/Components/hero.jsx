@@ -142,7 +142,7 @@ export default function Hero() {
 
       {/* Our Ultimate Sidebar */}
       <div 
-        className={`fixed sm:absolute top-28 right-0 sm:right-4 md:right-[40px] z-20 w-[180px] transition-transform duration-300 ease-out sm:translate-x-0 sm:block ${sidebarOpen ? 'translate-x-0 block' : 'translate-x-full hidden'}`}
+        className={`fixed sm:absolute top-36 right-0 sm:right-8 md:right-[100px] z-20 w-[180px] transition-transform duration-300 ease-out sm:translate-x-0 sm:block ${sidebarOpen ? 'translate-x-0 block' : 'translate-x-full hidden'}`}
       >
         <div className="overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(40,69,138,0.98)_0%,rgba(7,126,135,0.98)_100%)] shadow-[0_16px_34px_rgba(3,23,60,0.4)] backdrop-blur-sm">
           <div className="relative z-10 bg-[linear-gradient(180deg,#3158a7_0%,#2b4e97_100%)] px-4 pb-4 pt-5 text-center">
@@ -195,7 +195,7 @@ export default function Hero() {
         data-aos-delay="150"
       >
         {/* Search Input with Icon */}
-        <div className="relative flex-1 w-full max-w-[900px]">
+        <div className="relative flex-1 w-full max-w-[1100px]">
           <i className="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
           <input
             type="text"

@@ -13,81 +13,41 @@ export default function Choose() {
     gsap.registerPlugin(ScrollTrigger)
 
     const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 70%',
+          end: 'bottom 30%',
+          toggleActions: 'play reverse play reverse',
+        }
+      })
+
+      // Title animation - comes down
+      tl.fromTo(
         titleRef.current,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          immediateRender: false,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
-            end: 'top 30%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
       )
-
-      // Subtitle animation
-      gsap.fromTo(
+      // Subtitle animation - comes down
+      .fromTo(
         subtitleRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          immediateRender: false,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 60%',
-            end: 'top 25%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 80, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' },
+        '-=0.5'
       )
-
-      // Paragraph animation
-      gsap.fromTo(
+      // Paragraph animation - comes down
+      .fromTo(
         textRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          immediateRender: false,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 50%',
-            end: 'top 20%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
+        '-=0.4'
       )
-
-      // Button animation
-      gsap.fromTo(
+      // Button animation - comes down with bounce
+      .fromTo(
         buttonRef.current,
-        { y: 40, opacity: 0, scale: 0.9 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          immediateRender: false,
-          duration: 0.6,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 40%',
-            end: 'top 15%',
-            toggleActions: 'play none none reverse',
-          },
-        }
+        { y: 50, opacity: 0, scale: 0.9 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.7)' },
+        '-=0.3'
       )
     }, sectionRef)
 

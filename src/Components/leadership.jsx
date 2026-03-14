@@ -7,13 +7,13 @@ export default function Leadership() {
       image: "/manojranjan.png"
     },
     {
-      name: "Prof. (Dr.) Manojranjan Nayak",
-      role: "Founder & President",
+      name: "Dr. Swetapadma Dash",
+      role: "CEO",
       image: "/leader2.png"
     },
     {
-      name: "Prof. (Dr.) Manojranjan Nayak",
-      role: "Founder & President",
+      name: "Dr (Brig) Biraj Mohan Mishra",
+      role: "CMS",
       image: "/leader3.png"
     }
   ];
