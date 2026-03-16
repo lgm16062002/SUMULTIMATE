@@ -178,7 +178,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="relative flex min-h-[72px] items-end justify-end overflow-hidden bg-[linear-gradient(180deg,rgba(4,132,141,0.96)_0%,rgba(2,112,121,0.98)_100%)] px-4 pb-0 pt-3">
+          <div className="relative flex min-h-[62px] items-end justify-end overflow-hidden bg-[linear-gradient(180deg,rgba(4,132,141,0.96)_0%,rgba(2,112,121,0.98)_100%)] px-4 pb-0 pt-0">
             <img
               src="/sum-icon.png"
               alt="Sum Icon"
