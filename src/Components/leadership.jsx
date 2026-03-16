@@ -20,7 +20,8 @@ export default function Leadership() {
 
   return (
     <section
-      className="relative overflow-hidden bg-white py-[80px] px-5 text-center font-sans"
+      className="relative overflow-hidden bg-cover bg-center bg-no-repeat py-[80px] px-5 text-center font-sans"
+      style={{ backgroundImage: "url('/wall.png')" }}
       id="leadership"
       data-aos="fade-up"
     >

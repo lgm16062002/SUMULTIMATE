@@ -1,84 +1,163 @@
+const contactItems = [
+  { label: "Emergency", number: "+91 06743500500" },
+  { label: "Health Help Line", number: "+91 06743500500" },
+  { label: "Health Help Line", number: "+91 06743500500" },
+];
+
+const departments = [
+  "Cardiologist",
+  "Urologist",
+  "Pediatrician",
+  "Plastic Surgeon",
+  "Neurologist",
+  "Oncologist",
+  "Gynecologist",
+  "Ophthalmologist",
+  "Gastroenterologist",
+  "General Physician",
+  "ENT Specialist",
+  "Rheumatologist",
+  "Orthopaedician",
+  "Pulmonologist",
+  "Vascular Surgeon",
+  "General Surgeon",
+];
+
+const footerColumns = [
+  {
+    title: "Quick Links",
+    links: [
+      "About Us",
+      "Our Doctors",
+      "Our Facilities",
+      "Our Patients Speak",
+      "Sitemap",
+      "Contact Us",
+      "Biomedical Waste",
+      "Blog",
+    ],
+  },
+  {
+    title: "Corporate",
+    links: ["The Leadership", "Awards & Accolades", "Our Story"],
+  },
+  {
+    title: "Our Ultimate",
+    links: ["Doctors", "Media Coverage", "Patients Speak", "Packages", "CSR Activities"],
+  },
+  {
+    title: "Our Ultimate",
+    links: ["Doctors", "Media Coverage", "Patients Speak", "Packages", "CSR Activities"],
+  },
+  {
+    title: "Our Ultimate",
+    links: ["Doctors", "Media Coverage", "Patients Speak", "Packages", "CSR Activities"],
+  },
+  {
+    title: "Our Ultimate",
+    links: ["Doctors", "Media Coverage", "Patients Speak", "Packages", "CSR Activities"],
+  },
+];
+
 export default function Footer() {
-    return (
-        <footer
-            className="bg-gradient-to-br from-[#03309a] via-[#015166] to-[#015e4f] text-white py-20 px-5 lg:px-24 font-sans relative overflow-hidden"
-            id="contact"
-            data-aos="fade-up"
-        >
-            <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-12">
+  return (
+    <footer id="contact" className="bg-[#0c3640] font-sans text-white relative overflow-hidden">
+      <div className="mx-auto max-w-[1280px] px-6 pb-12 pt-28 sm:px-10 sm:pt-32 lg:px-[72px] lg:pb-8 lg:pt-28">
+        <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-12">
+          <div className="space-y-6">
+            <img
+              src="/sum-logo.png"
+              alt="SUM Ultimate Medicare"
+              className="h-auto w-[165px] invert brightness-0 saturate-0 contrast-200"
+            />
 
-                {/* Left Section: Contact Info */}
-                <div className="lg:w-[40%] flex flex-col gap-8">
-                    <img
-                        src="/sum-logo.png"
-                        alt="SUM Ultimate Medicare"
-                        className="w-[200px] h-auto invert brightness-0"
-                    />
-                    <div className="flex flex-col gap-4 text-gray-100 text-[18px] leading-relaxed tracking-wide">
-                        <p>
-                            K-8 ,KALINGA NAGAR, GHATIKIA,<br />
-                            BHUBANESWAR, 751003, ODISHA
-                        </p>
-                        <p className="mt-2 text-[18px]">
-                            EPABX: +91 0674 3 500 500
-                        </p>
-                        <p className="text-[18px]">
-                            Ambulance: +91 0674 266 1111
-                        </p>
-                        <p className="mt-4 text-[18px]">
-                            sumum_bbsr@soahospitals.com
-                        </p>
-                    </div>
+            <div className="space-y-4 text-[12px] font-normal leading-[1.35] text-white/88 sm:text-[13px]">
+              <div className="space-y-0.5 text-[12px] font-medium uppercase tracking-[0.01em] text-white sm:text-[13px]">
+                <p>K-8 ,KALINGA NAGAR, GHATIKIA,</p>
+                <p>BHUBANESWAR, 751003, ODISHA</p>
+              </div>
+              <p>EPABX: +91 0674 3 500 500</p>
+              <p>Ambulance: +91 0674 266 1111</p>
+              <p className="break-all text-[12px] sm:text-[13px]">sumum_bbsr@soahospitals.com</p>
+            </div>
+          </div>
+
+          <div className="space-y-10">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+              {contactItems.map((item) => (
+                <div key={`${item.label}-${item.number}`} className="flex items-center gap-4">
+                  <div className="h-[58px] w-[58px] shrink-0 rounded-full bg-[#16a085]" />
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-medium leading-none text-white sm:text-[12px]">
+                      {item.label}
+                    </p>
+                    <p className="mt-2 text-[17px] font-normal leading-none tracking-[-0.01em] text-white/80 sm:text-[18px]">
+                      {item.number}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Right Section: Links & Buttons */}
-                <div className="lg:w-[70%] flex flex-col gap-8 lg:gap-12">
-
-                    {/* Link Columns */}
-                    <div className="flex flex-col md:flex-row gap-16 md:pl-6 lg:pl-10 pt-4 border-t border-white/20">
-                        {[1, 2, 3].map((_, idx) => (
-                            <div key={idx} className="flex-1">
-                                <h4 className="text-[17px] font-bold mb-6 text-white/90">Start Your Care</h4>
-                                <ul className="flex flex-col gap-3 text-gray-200 text-[13px] font-semibold leading-tight">
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Start Your Care</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Your Journey Begins Here</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Why Choose SMC?</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Request an Appointment</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Billing & Insurance</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Location & Parking</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Facilities</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">Contact Us</li>
-                                    <li className="hover:text-white cursor-pointer hover:font-normal transition-all">FAQ</li>
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-5 mt-4">
-                        <button className="flex-1 bg-[#006d77] hover:bg-[#005a60] text-white py-4 sm:py-5 px-6 sm:px-8 text-[16px] sm:text-[18px] tracking-wide transition-all duration-300">
-                            Request an Appointment
-                        </button>
-                        <button className="flex-1 bg-[#006d77] hover:bg-[#005a60] text-white py-4 sm:py-5 px-6 sm:px-8 text-[16px] sm:text-[18px] tracking-wide transition-all duration-300">
-                            Find a Doctor
-                        </button>
-                    </div>
-                </div>
-
+              ))}
             </div>
 
-            {/* Copyright Bar */}
-            <div className="max-w-[1400px] mx-auto mt-10 pt-8 text-center text-white/80 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold tracking-wide flex flex-col md:flex-row justify-center gap-2 sm:gap-3">
-                <p>© 2026 Sum Ultimate | Best Hospitals In Bhubaneswar | </p>
-                <p>Location | Patients' Rights and Responsibilities | Privacy Policy</p>
+            <div>
+              <div className="flex items-center gap-3 text-white/85">
+                <span className="h-px flex-1 bg-white/50" />
+                <h3 className="text-[14px] font-medium tracking-[-0.01em] sm:text-[15px]">
+                  Departments
+                </h3>
+                <span className="h-px flex-1 bg-white/50" />
+              </div>
+
+              <div className="mt-5 grid grid-cols-1 gap-x-10 gap-y-4 text-[13px] font-medium tracking-[-0.01em] text-white/78 sm:grid-cols-2 lg:grid-cols-4">
+                {departments.map((department) => (
+                  <div key={department} className="flex items-center gap-3">
+                    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white/60" />
+                    <span>{department}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="pointer-events-none absolute bottom-0 right-[5rem] sm:right-[5.75rem] md:right-[7rem] z-10">
-                <img
-                    src="/sum-icon.png"
-                    alt=""
-                    className="w-[96px] sm:w-[122px] md:w-[150px] object-contain opacity-20"
-                />
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2 xl:grid-cols-6">
+          {footerColumns.map((column, index) => (
+            <div
+              key={`${column.title}-${index}`}
+              className={index < 2 ? "xl:border-r xl:border-white/45 xl:pr-10" : ""}
+            >
+              <h4 className="text-[15px] font-medium tracking-[-0.01em] text-[#10c0b3]">
+                {column.title}
+              </h4>
+              <div className="mt-4 h-[3px] w-[104px] bg-[#10c0b3]" />
+              <ul className="mt-5 space-y-3 text-[13px] font-medium leading-none tracking-[-0.01em] text-white/78">
+                {column.links.map((link) => (
+                  <li key={link}>{link}</li>
+                ))}
+              </ul>
             </div>
-        </footer>
-    );
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom section with icon and copyright */}
+      <div className="relative">
+        {/* Sum Icon - positioned above the border */}
+        <div className="pointer-events-none absolute bottom-[57px] right-4 z-10 sm:bottom-[73px] sm:right-6 lg:bottom-[81px] lg:right-12">
+          <img
+            src="/sum-icon.png"
+            alt=""
+            className="h-16 w-16 object-contain opacity-30 sm:h-20 sm:w-20"
+          />
+        </div>
+
+        <div className="border-t border-white/70 px-6 py-5 text-center text-[11px] font-normal text-white/90 sm:px-10 sm:text-[12px] lg:px-[72px]">
+          <p>
+            Copyright 2026 Sum Ultimate | Best Hospitals In Bhubaneswar | Location |
+            Patients' Rights and Responsibilities | Privacy Policy
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
