@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import '../Styles/choose.css'
 
 export default function Choose() {
   const sectionRef = useRef(null)
@@ -55,7 +56,8 @@ export default function Choose() {
   }, [])
 
   return (
-    <section
+    <>
+      <section
       ref={sectionRef}
       className="relative w-full overflow-hidden min-h-screen flex items-center -mt-16 md:-mt-20 z-10 sticky top-0"
       id="journey"
@@ -105,14 +107,15 @@ export default function Choose() {
             every step.
           </p>
 
-          <button
-            ref={buttonRef}
-            className="bg-white/90 hover:bg-white text-[#1b746e] font-medium py-3 px-8 sm:px-10 rounded-full transition duration-300 shadow-md w-full sm:w-auto"
-          >
-            Know More
-          </button>
+          <div className="button_item btn--primary">
+            <a href="#services">
+              <i></i>
+              <button className="text">Know More</button>
+            </a>
+          </div>
         </div>
       </div>
     </section>
+    </>
   )
 }

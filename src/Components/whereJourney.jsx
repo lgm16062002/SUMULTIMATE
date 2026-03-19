@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import '../Styles/whereJourney.css'
 
 export default function WhereJourney() {
   const sectionRef = useRef(null)
@@ -70,7 +71,8 @@ export default function WhereJourney() {
   }, [])
 
   return (
-    <section
+    <>
+      <section
       ref={sectionRef}
       className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row items-center justify-center md:justify-end overflow-hidden py-12 md:py-0 z-20"
       style={{ backgroundImage: `url('${bgImage}')` }}
@@ -107,12 +109,12 @@ export default function WhereJourney() {
           We are committed to providing medical services that prioritize each patient's unique experience &ndash; ensuring personalized, respectful, and collaborative care at every step.
         </p>
 
-        <button
-          ref={buttonRef}
-          className="bg-transparent border-2 border-[#1e6ac2] text-white hover:bg-[#1e6ac2] hover:text-white transition-all duration-300 font-medium py-[10px] px-10 rounded-[30px] text-[16px] tracking-wide"
-        >
-          Know More
-        </button>
+        <div className="button_item btn--primary">
+          <a href="#services">
+            <i></i>
+            <button className="text">Know More</button>
+          </a>
+        </div>
       </div>
 
       {/* Mobile: Other content below - Hidden on desktop */}
@@ -133,12 +135,12 @@ export default function WhereJourney() {
           We are committed to providing medical services that prioritize each patient's unique experience &ndash; ensuring personalized, respectful, and collaborative care at every step.
         </p>
 
-        <button
-          ref={buttonRef}
-          className="bg-transparent border-2 border-[#1e6ac2] text-white hover:bg-[#1e6ac2] hover:text-white transition-all duration-300 font-medium py-[10px] px-10 rounded-[30px] text-[15px] sm:text-[16px] tracking-wide w-full sm:w-auto"
-        >
-          Know More
-        </button>
+        <div className="button_item btn--primary">
+          <a href="#services">
+            <i></i>
+            <button className="text">Know More</button>
+          </a>
+        </div>
       </div>
 
       <div className="pointer-events-none absolute bottom-0 right-[5rem] sm:right-[5.75rem] md:right-[7rem] z-30">
@@ -150,5 +152,6 @@ export default function WhereJourney() {
       </div>
 
     </section>
+    </>
   )
 }

@@ -51,16 +51,16 @@ const Renderer = () => {
         <LatestBlog />
 
         <div className="absolute inset-x-0 bottom-0 z-20 translate-y-1/2 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-[920px] gap-5 md:grid-cols-2">
+          <div className="mx-auto flex max-w-[920px] flex-row gap-3 sm:gap-4">
             {footerCtas.map((cta) => {
               return (
                 <a
                   key={cta.title}
                   href={cta.href}
-                  className="flex min-h-[76px] items-center gap-6 rounded-[8px] bg-[#18916d] px-7 py-4 text-white shadow-[0_16px_28px_rgba(0,0,0,0.22)] transition-transform duration-300 hover:-translate-y-1"
+                  className="flex w-1/2 min-h-[56px] sm:min-h-[60px] items-center gap-3 sm:gap-4 rounded-[8px] bg-[#18916d] px-4 sm:px-5 py-3 text-white shadow-[0_12px_20px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <img src={cta.icon} alt="" className="h-12 w-12 shrink-0 object-contain" />
-                  <span className="text-[18px] font-normal tracking-[0.01em] sm:text-[20px]">
+                  <img src={cta.icon} alt="" className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 object-contain" />
+                  <span className="text-[12px] sm:text-[14px] font-normal tracking-[0.01em]">
                     {cta.title}
                   </span>
                 </a>

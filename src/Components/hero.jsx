@@ -273,7 +273,7 @@ export default function Hero() {
 
         onClick={() => setSidebarOpen(!sidebarOpen)}
 
-        className="fixed top-32 right-0 z-30 sm:hidden flex items-center justify-center w-8 h-24 rounded-l-lg bg-[#3158a7] text-white shadow-lg transition-all duration-300"
+        className="fixed top-42 right-0 z-30 sm:hidden flex items-center justify-center w-8 h-24 rounded-l-lg bg-[#3158a7] text-white shadow-lg transition-all duration-300"
 
         style={{ transform: sidebarOpen ? 'translateX(-180px)' : 'translateX(0)' }}
 
